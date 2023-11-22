@@ -33,16 +33,19 @@ def getSpanLength(length):
 # simple method
 # rav = (P * P_total) / 2
 # rbv = rav
+# output : rav | rbv = 64.5
 
 # (1) rav reaction
 # ΣMB = 0
 rav = None
 rav = sum(P * getSpanLength(i) for i in range(6)) / span_length
+# output : rav = 64.5
 
 # (2) rbv reaction
 # ΣMA = 0
 rbv = None
 rbv = rav
+# output : rbv = 64.5
 
 # (3) control
 # ΣkV = 0
@@ -53,6 +56,7 @@ if((rav + rbv) == (P * P_total)):
     control = True
 else:
     control = False
+# output : control = True
 
 # (4) rah reaction
 # no rah reaction, because there is no horizontal force
@@ -61,3 +65,4 @@ else:
 
 tanθ = None
 tanθ = math.degrees(math.atan2(T, (I / 2)))
+# output : tanθ = 65.77
